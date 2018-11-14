@@ -1,0 +1,47 @@
+{
+  "name": "webpack-react-boilerplate",
+  "version": "1.0.0",
+  "description": "Too hipster to use react-create-app",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.development.js  --progress --colors",
+    "production": "NODE_ENV=production webpack --config webpack.production.js --progress --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorfern91/webpack-react-boilerplate.git"
+  },
+  "keywords": [
+    "webpack",
+    "react",
+    "boilerplate"
+  ],
+  "author": "victorfern91",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorfern91/webpack-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/victorfern91/webpack-react-boilerplate#readme",
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.20",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
+    "error-overlay-webpack-plugin": "^0.1.5",
+    "html-webpack-plugin": "^3.2.0",
+    "react-hot-loader": "^4.3.12",
+    "terser-webpack-plugin": "^1.1.0",
+    "webpack": "^4.25.1",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^4.1.4"
+  }
+}
