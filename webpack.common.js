@@ -1,7 +1,10 @@
 const path = require("path");
+const autoprefixer = require("autoprefixer");
 
 // importing webpack plugins
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 
 /**
  * Webpack common configuration
@@ -45,7 +48,25 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ["babel-loader"]
-            }
+            },
+            {
+                test: /\.(css|scss)$/,
+                use: [
+                    "css-hot-loader",
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            plugins() {
+                                return [autoprefixer({ browsers: ["last 2 versions"] })];
+                            }
+                        }
+                    },
+                    "sass-loader"
+                ]
+            },
+
         ]
     },
 
@@ -54,6 +75,10 @@ module.exports = {
             title: "React App",
             template: "./index.html",
             inject: "body"
+        }),
+
+        new MiniCssExtractPlugin({
+            filename: "[name].css"
         })
     ],
 
