@@ -3,7 +3,8 @@ const common = require("./webpack.common");
 const webpack = require("webpack");
 
 // webpack plugins
-const ErrorOverlayPlugin = require("error-overlay-webpack-plugin")
+const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 /**
  * Webpack development configuration
@@ -18,6 +19,7 @@ module.exports = merge(common, {
     devtool: "source-map",
 
     plugins: [
+        new DashboardPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new ErrorOverlayPlugin()
     ],

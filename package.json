@@ -4,7 +4,7 @@
   "description": "Too hipster to use react-create-app",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.development.js  --progress --colors",
+    "start": "webpack-dashboard -- webpack-dev-server --config webpack.development.js",
     "production": "NODE_ENV=production webpack --config webpack.production.js --progress --colors"
   },
   "repository": {
@@ -48,6 +48,7 @@
     "webpack": "^4.27.1",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
+    "webpack-dashboard": "^2.0.0",
     "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.1.4"
   }
