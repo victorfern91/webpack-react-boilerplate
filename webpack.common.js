@@ -1,9 +1,9 @@
-const path = require("path");
-const autoprefixer = require("autoprefixer");
+const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 // importing webpack plugins
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 /**
@@ -14,78 +14,78 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
  */
 
 module.exports = {
-    entry: ["./src/index.js"],
+  entry: ['./src/index.js'],
 
-    output: {
-        path: path.join(__dirname, "dist"),
-        publicPath: "/",
-        filename: "[name].js"
-    },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/',
+    filename: '[name].js'
+  },
 
-    optimization: {
-        splitChunks: {
-            chunks: "async",
-            minChunks: 1,
-            minSize: 0,
-            cacheGroups: {
-                vendors: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: "vendors",
-                    chunks: "initial",
-                    minChunks: 1,
-                    minSize: 0
-                },
-                default: {
-                    reuseExistingChunk: true
-                }
-            }
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minChunks: 1,
+      minSize: 0,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'initial',
+          minChunks: 1,
+          minSize: 0
+        },
+        default: {
+          reuseExistingChunk: true
         }
-    },
-
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: ["babel-loader"]
-            },
-            {
-                test: /\.(css|scss)$/,
-                use: [
-                    "css-hot-loader",
-                    MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            plugins() {
-                                return [autoprefixer({ browsers: ["last 2 versions"] })];
-                            }
-                        }
-                    },
-                    "sass-loader"
-                ]
-            },
-
-        ]
-    },
-
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: "React App",
-            template: "./index.html",
-            inject: "body"
-        }),
-
-        new MiniCssExtractPlugin({
-            filename: "[name].css"
-        })
-    ],
-
-    resolve: {
-        modules: [
-            path.resolve("./src"),
-            "node_modules"
-        ]
+      }
     }
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      },
+      {
+        test: /\.(css|scss)$/,
+        use: [
+          'css-hot-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins() {
+                return [autoprefixer({ browsers: ['last 2 versions'] })];
+              }
+            }
+          },
+          'sass-loader'
+        ]
+      }
+
+    ]
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'React App',
+      template: './index.html',
+      inject: 'body'
+    }),
+
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    })
+  ],
+
+  resolve: {
+    modules: [
+      path.resolve('./src'),
+      'node_modules'
+    ]
+  }
 };

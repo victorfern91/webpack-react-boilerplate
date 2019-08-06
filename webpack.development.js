@@ -1,10 +1,10 @@
-const merge = require("webpack-merge");
-const common = require("./webpack.common");
-const webpack = require("webpack");
+const merge = require('webpack-merge');
+const webpack = require('webpack');
 
 // webpack plugins
-const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
+const common = require('./webpack.common');
 
 /**
  * Webpack development configuration
@@ -14,19 +14,19 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
  */
 
 module.exports = merge(common, {
-    mode: "development",
+  mode: 'development',
 
-    devtool: "source-map",
+  devtool: 'source-map',
 
-    plugins: [
-        new DashboardPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new ErrorOverlayPlugin()
-    ],
+  plugins: [
+    new DashboardPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new ErrorOverlayPlugin()
+  ],
 
-    devServer: {
-        port: 8080,
-        contentBase: "./dist",
-        hot: true
-    }
+  devServer: {
+    port: 8080,
+    contentBase: './dist',
+    hot: true
+  }
 });
