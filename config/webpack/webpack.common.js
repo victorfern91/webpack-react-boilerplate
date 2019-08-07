@@ -4,19 +4,13 @@ const autoprefixer = require('autoprefixer');
 // importing webpack plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-/**
- * Webpack common configuration
- *
- * @author victorfern91@gmail.com
- * @since 1.0.0
- */
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: ['./src/index.jsx'],
 
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '../../dist'),
     publicPath: '/',
     filename: '[name].js'
   },
@@ -75,8 +69,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'React App',
       template: './public/index.html',
-      inject: 'body'
+      inject: 'body',
+      favicon: 'dist/favicon.ico'
     }),
+
+    new CopyPlugin([{ from: './public/favicon.ico' }]),
 
     new MiniCssExtractPlugin({
       filename: '[name].css'

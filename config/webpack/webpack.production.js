@@ -7,13 +7,6 @@ const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const common = require('./webpack.common');
 
-/**
- * Webpack development configuration
- *
- * @author victorfern91@gmail.com
- * @since 1.0.0
- */
-
 module.exports = merge(common, {
   mode: 'production',
 
@@ -61,7 +54,7 @@ module.exports = merge(common, {
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       logLevel: 'info',
-      reportFilename: '../target/bundle-report.html',
+      reportFilename: '../../target/bundle-report.html',
       openAnalyzer: false
     }),
 

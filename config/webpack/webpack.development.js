@@ -6,13 +6,6 @@ const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const common = require('./webpack.common');
 
-/**
- * Webpack development configuration
- *
- * @author victorfern91@gmail.com
- * @since 1.0.0
- */
-
 module.exports = merge(common, {
   mode: 'development',
 
