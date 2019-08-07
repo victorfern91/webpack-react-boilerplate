@@ -67,11 +67,5 @@ module.exports = merge(common, {
 
     // Checking duplicate packages in our bundles
     new DuplicatePackageCheckerPlugin()
-  ],
-
-  devServer: {
-    port: 8080,
-    contentBase: './dist',
-    hot: false
-  }
+  ]
 });
