@@ -8,7 +8,8 @@
     "start-dashboard": "webpack-dashboard -- webpack-dev-server --config webpack.development.js",
     "build": "NODE_ENV=production webpack --config webpack.production.js --progress --colors",
     "test": "jest --coverage",
-    "lint": "eslint --ext .jsx --ext .js --quiet . && prettier --check \"{config,src,__{tests,mocks}__}/**/*.js\""
+    "lint": "eslint --ext .jsx --ext .js --quiet . && prettier --check \"{config,src,__{tests,mocks}__}/**/*.js\"",
+    "fix-lint": "eslint --ext .jsx --ext .js --quiet --fix . && prettier --write \"{config,src,__{tests,mocks}__}/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,6 @@
   },
   "homepage": "https://github.com/victorfern91/webpack-react-boilerplate#readme",
   "dependencies": {
-    "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -58,6 +58,7 @@
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
+    "prettier": "^1.18.2",
     "react-hot-loader": "^4.3.12",
     "sass-loader": "^7.1.0",
     "terser-webpack-plugin": "^1.1.0",
