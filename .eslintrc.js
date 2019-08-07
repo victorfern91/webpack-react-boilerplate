@@ -1,10 +1,12 @@
 module.exports = {
+  parser: 'babel-eslint',
   env: {
     browser: true,
     es6: true,
   },
   extends: [
     'airbnb',
+    'prettier'
   ],
   globals: {
     Atomics: 'readonly',
@@ -19,10 +21,18 @@ module.exports = {
   },
   plugins: [
     'react',
+    'jest'
   ],
   rules: {
     'comma-dangle': ['error', 'never'],
-    'import/no-extraneous-dependencies': ['off'],
-    'max-len': ["error", { "code": 120 }]
+    'import/no-extraneous-dependencies': 'off',
+    'max-len': ["error", { "code": 120 }],
+    'prefer-destructuring': 'off',
+    'import/no-unresolved': 'off',
+    'global-require': 'off'
+  },
+  env: {
+    jest: true,
+    browser: true
   }
 };

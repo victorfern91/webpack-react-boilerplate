@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server --config webpack.development.js",
-    "production": "NODE_ENV=production webpack --config webpack.production.js --progress --colors",
+    "build": "NODE_ENV=production webpack --config webpack.production.js --progress --colors",
     "test": "jest",
-    "lint": "eslint *.js"
+    "lint": "eslint --ext .jsx --ext .js --quiet . && prettier --check \"{config,src,__{tests,mocks}__}/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/victorfern91/webpack-react-boilerplate#readme",
   "dependencies": {
+    "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -33,6 +34,7 @@
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.4.2",
+    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.4",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.20",
@@ -44,7 +46,9 @@
     "error-overlay-webpack-plugin": "^0.1.5",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.14.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "html-webpack-plugin": "^3.2.0",
