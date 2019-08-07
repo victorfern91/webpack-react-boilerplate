@@ -1,11 +1,6 @@
 import React from 'react';
-
-let hot = null;
+import { includeHotReloadCapabilities } from 'utils/dev';
 
 const App = () => <h1>Hello World!</h1>;
 
-if (process.env.NODE_ENV === 'development') {
-  hot = require('react-hot-loader').hot;
-}
-
-export default process.env.NODE_ENV === 'development' ? hot(module)(App) : App;
+export default includeHotReloadCapabilities(App);
