@@ -4,12 +4,12 @@
   "description": "Too hipster to use react-create-app",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.development.js  --progress --colors",
-    "start-dashboard": "webpack-dashboard -- webpack-dev-server --config webpack.development.js",
-    "build": "NODE_ENV=production webpack --config webpack.production.js --progress --colors",
+    "start": "webpack-dev-server --config config/webpack/webpack.development.js  --progress --colors",
+    "start-dashboard": "webpack-dashboard -- webpack-dev-server --config config/webpack/webpack.development.js",
+    "build": "NODE_ENV=production webpack --config config/webpack/webpack.production.js --progress --colors",
     "test": "jest --coverage",
-    "lint": "eslint --ext .jsx --ext .js --quiet . && prettier --check \"{config,src,__{tests,mocks}__}/**/*.js\"",
-    "fix-lint": "eslint --ext .jsx --ext .js --quiet --fix . && prettier --write \"{config,src,__{tests,mocks}__}/**/*.js\""
+    "lint": "eslint --ext .jsx --ext .js --quiet . && prettier --check '**/*.{js,jsx,json,scss,html}'",
+    "fix-lint": "eslint --ext .jsx --ext .js --quiet --fix . && prettier --write '**/*.{js,jsx,json,scss,html}'"
   },
   "repository": {
     "type": "git",

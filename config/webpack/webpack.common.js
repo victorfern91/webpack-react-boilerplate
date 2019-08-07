@@ -5,7 +5,6 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-
 /**
  * Webpack common configuration
  *
@@ -48,7 +47,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         resolve: {
-          extensions: [".js", ".jsx"]
+          extensions: ['.js', '.jsx']
         },
         use: ['babel-loader']
       },
@@ -69,7 +68,6 @@ module.exports = {
           'sass-loader'
         ]
       }
-
     ]
   },
 
@@ -86,10 +84,6 @@ module.exports = {
   ],
 
   resolve: {
-    modules: [
-      path.resolve('./src'),
-      path.resolve('./'),
-      'node_modules'
-    ]
+    modules: [path.resolve('./src'), path.resolve('./'), 'node_modules']
   }
 };

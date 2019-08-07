@@ -1,28 +1,22 @@
 module.exports = {
   parser: 'babel-eslint',
-  extends: [
-    'airbnb',
-    'prettier'
-  ],
+  extends: ['airbnb', 'prettier'],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module'
   },
-  plugins: [
-    'react',
-    'jest'
-  ],
+  plugins: ['react', 'jest'],
   rules: {
     'comma-dangle': ['error', 'never'],
     'import/no-extraneous-dependencies': 'off',
-    'max-len': ["error", { "code": 120 }],
+    'max-len': ['error', { code: 120 }],
     'prefer-destructuring': 'off',
     'import/no-unresolved': 'off',
     'global-require': 'off'

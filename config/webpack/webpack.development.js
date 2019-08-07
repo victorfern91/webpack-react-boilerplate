@@ -18,11 +18,7 @@ module.exports = merge(common, {
 
   devtool: 'source-map',
 
-  plugins: [
-    new DashboardPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new ErrorOverlayPlugin()
-  ],
+  plugins: [new DashboardPlugin(), new webpack.HotModuleReplacementPlugin(), new ErrorOverlayPlugin()],
 
   devServer: {
     port: 8080,
