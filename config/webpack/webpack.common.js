@@ -74,7 +74,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'React App',
-      template: './index.html',
+      template: './public/index.html',
       inject: 'body'
     }),
 
