@@ -10,7 +10,7 @@ module.exports = {
     '/node_modules/'
   ],
 
-  moduleFileExtensions: ['js'],
+  moduleFileExtensions: ['js', 'jsx'],
 
   // A list of reporter names that Jest uses when writing coverage reports
   coverageReporters: [
@@ -24,7 +24,7 @@ module.exports = {
   ],
 
   setupFilesAfterEnv: [
-    '<rootDir>/config/setupTest.js'
+    '<rootDir>/config/jest-setup.js'
   ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
@@ -36,5 +36,7 @@ module.exports = {
   // transformation
   transformIgnorePatterns: [
     '/node_modules/'
-  ]
+  ],
+
+  snapshotSerializers: ["enzyme-to-json/serializer"]
 };

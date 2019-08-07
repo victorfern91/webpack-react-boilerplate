@@ -1,9 +1,5 @@
 module.exports = {
   parser: 'babel-eslint',
-  env: {
-    browser: true,
-    es6: true,
-  },
   extends: [
     'airbnb',
     'prettier'
@@ -33,6 +29,7 @@ module.exports = {
   },
   env: {
     jest: true,
-    browser: true
+    browser: true,
+    es6: true
   }
 };
