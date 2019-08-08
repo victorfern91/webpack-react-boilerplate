@@ -54,7 +54,7 @@ module.exports = merge(common, {
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       logLevel: 'info',
-      reportFilename: '../../target/bundle-report.html',
+      reportFilename: '../target/bundle-report.html',
       openAnalyzer: false
     }),
 

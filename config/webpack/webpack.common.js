@@ -4,10 +4,6 @@ const autoprefixer = require('autoprefixer');
 // importing webpack plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-
-const isDev = process.env.NODE_ENV === 'development';
-const HTML_TITLE = 'Hipster React App';
 
 module.exports = {
   entry: ['./src/index.jsx'],
@@ -64,19 +60,24 @@ module.exports = {
           },
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
       }
     ]
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: isDev ? `${HTML_TITLE} - DEV MODE` : HTML_TITLE,
+      title: 'Hipster React App',
       template: './public/index.html',
       inject: 'body',
-      favicon: isDev ? './public/favicon.ico' : './dist/favicon.ico'
+      favicon: './public/favicon.ico'
     }),
-
-    new CopyPlugin([{ from: './public/favicon.ico' }]),
 
     new MiniCssExtractPlugin({
       filename: '[name].css'
@@ -84,6 +85,6 @@ module.exports = {
   ],
 
   resolve: {
-    modules: [path.resolve('./src'), 'node_modules']
+    modules: [path.resolve('./src'), path.resolve('./'), 'node_modules']
   }
 };
