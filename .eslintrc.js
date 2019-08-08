@@ -19,7 +19,8 @@ module.exports = {
     'max-len': ['error', { code: 120 }],
     'prefer-destructuring': 'off',
     'import/no-unresolved': 'off',
-    'global-require': 'off'
+    'global-require': 'off',
+    'react/jsx-one-expression-per-line': 'off'
   },
   env: {
     jest: true,
