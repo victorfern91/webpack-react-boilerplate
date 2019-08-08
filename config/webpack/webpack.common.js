@@ -6,6 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
+const isDev = process.env.NODE_ENV === 'development';
+const HTML_TITLE = 'Hipster React App';
+
 module.exports = {
   entry: ['./src/index.jsx'],
 
@@ -67,10 +70,10 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'React App',
+      title: isDev ? `${HTML_TITLE} - DEV MODE` : HTML_TITLE,
       template: './public/index.html',
       inject: 'body',
-      favicon: 'dist/favicon.ico'
+      favicon: isDev ? './public/favicon.ico' : './dist/favicon.ico'
     }),
 
     new CopyPlugin([{ from: './public/favicon.ico' }]),
