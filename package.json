@@ -7,7 +7,7 @@
     "start-debug": "NODE_ENV=development webpack-dev-server --config config/webpack/webpack.development.js  --progress --colors",
     "start": "NODE_ENV=development webpack-dashboard -- webpack-dev-server --config config/webpack/webpack.development.js",
     "build": "NODE_ENV=production webpack --config config/webpack/webpack.production.js --progress --colors",
-    "test": "jest --coverage",
+    "test": "NODE_ENV=test jest --coverage",
     "lint": "eslint --ext .jsx --ext .js --quiet . && prettier --check '**/*.{js,jsx,json,scss,html}'",
     "lint-fix": "eslint --ext .jsx --ext .js --quiet --fix . && prettier --write '**/*.{js,jsx,json,scss,html}'"
   },
