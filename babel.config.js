@@ -5,10 +5,7 @@ module.exports = {
       '@babel/preset-env',
       {
         modules: false,
-        useBuiltIns: 'entry',
-        targets: {
-          browsers: ['>0.25%', 'not ie 11', 'not op_mini all']
-        }
+        useBuiltIns: 'entry'
       }
     ],
     '@babel/preset-react'
@@ -24,8 +21,7 @@ module.exports = {
               node: 'current'
             }
           }
-        ],
-        '@babel/preset-react'
+        ]
       ]
     },
 
