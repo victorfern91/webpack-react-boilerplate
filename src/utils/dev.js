@@ -1,11 +1,11 @@
 export const includeHotReloadCapabilities = component => {
-  let hot = null;
-
-  if (process.env.NODE_ENV === 'development') {
-    hot = require('react-hot-loader').hot;
+  if (process.env.NODE_ENV !== 'development') {
+    return component;
   }
 
-  return process.env.NODE_ENV === 'development' ? hot(module)(component) : component;
+  const hot = require('react-hot-loader').hot;
+
+  return hot(module)(component);
 };
 
 export default { includeHotReloadCapabilities };
